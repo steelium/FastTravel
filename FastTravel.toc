@@ -1,0 +1,7 @@
+## Interface: 30505
+## Title: Fast Travel
+## Notes: Only works in test mode...
+## Author: Darc
+## Version: 0.1
+
+FastTravel.xml

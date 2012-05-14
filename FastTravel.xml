@@ -1,0 +1,100 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://www.blizzard.com/wow/ui/ 
+ ..\..\FrameXML\UI.xsd">
+    <Script File="FastTravel.lua"/>
+    <!--
+<Frame name="autoInviteMainConfigFrame" frameStrata="HIGH" toplevel="true" enableMouse="true" movable="true" parent="UIParent" hidden="true">
+	<Size>
+		<RelDimension x="0.3" y="0.3"/>
+	</Size>
+	<Anchors>
+		<Anchor point="CENTER"/>
+	</Anchors>
+  <Backdrop bgFile="Interface\TutorialFrame\TutorialFrameBackground" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+	<EdgeSize>
+		<AbsValue val="16"/>
+	</EdgeSize>
+	<TileSize>
+		<AbsValue val="32"/>
+	</TileSize>
+	<BackgroundInsets>
+		<AbsInset left="5" right="5" top="5" bottom="5"/>
+	</BackgroundInsets>
+  </Backdrop>
+
+    
+</Frame>
+-->
+ 
+    <!--
+    <Frame name="FastTravelFrame">
+        <Anchors>
+            <Anchor point="CENTER"/>
+        </Anchors>
+        <Frames>
+            <Button name="MyAddon_Button">
+                <Anchors>
+                    <Anchor point="CENTER"/>
+                </Anchors>
+            </Button>
+        </Frames>
+        
+        <Scripts>
+            <OnLoad>
+                FastTravel();
+                FastTravel_OnLoad();
+
+            </OnLoad>
+        </Scripts>
+    </Frame>-->
+    <Frame name="FastTravelWorldMapFrame" parent="WorldMapFrame" hidden="false">
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString name="FastTravelWorldMap" hidden="false" inherits="GameFontNormal" text="I'm text">
+					<Anchors>
+						<Anchor point="BOTTOM" relativeTo="WorldMapFrame" relativePoint="BOTTOM">
+							<Offset>
+								<AbsDimension x="0" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+                <!--<Button name="Blah" hidden="false" inherits="UIPanelCloseButton">
+                <Anchors>
+                        <Anchor point="CENTER" relativeTo="WorldMapFrame" relativePoint="CENTER">
+                            <Offset>
+                                <AbsDimension x="0" y="-7"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Button>-->
+			</Layer>
+		</Layers>
+		<Scripts>
+            <OnLoad function="FastTravel"/>
+			<OnUpdate>
+				FastTravelWorldMap_OnUpdate();
+			</OnUpdate>
+            <OnKeyDown function="ft_kdo"/>
+		</Scripts>
+	</Frame>
+    <!--<Button name="asdf" inherits="UIPanelButtonTemplate" text="asldkfj" parent="WorldMapFrame" toplevel="true">
+    <Size><AbsDimension x="100" y="25"/></Size>
+    <Anchors>
+        <Anchor point="BOTTOM" relativeTo="WorldMapPositioningGuide" relativePoint="BOTTOM">
+            <Offset>
+                <AbsDimension x="10" y="25"/>
+            </Offset>
+        </Anchor>
+    </Anchors>
+    <Scripts>
+        <OnClick>
+            FastTravel()
+        </OnClick>
+    </Scripts>
+    </Button>
+-->
+
+</Ui> 
+
